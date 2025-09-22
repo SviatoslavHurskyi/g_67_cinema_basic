@@ -8,17 +8,25 @@ public class Ticket {
     private String titleMovie;
     private double price;
     private boolean active;
-    private String genre;
+    private Genre genre;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public Long getId() {
+        return id;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Ticket ticket = (Ticket) o;
-        return Double.compare(price, ticket.price) == 0
-                && active == ticket.active
-                && Objects.equals(id, ticket.id)
-                && Objects.equals(titleMovie, ticket.titleMovie)
-                && Objects.equals(genre, ticket.genre);
+        return Double.compare(price, ticket.price) == 0 && active == ticket.active && Objects.equals(id, ticket.id) && Objects.equals(titleMovie, ticket.titleMovie) && genre == ticket.genre;
     }
 
     @Override
