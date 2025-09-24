@@ -22,6 +22,26 @@ public class Ticket {
         return id;
     }
 
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public String getTitleMovie() {
+        return titleMovie;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -39,4 +59,5 @@ public class Ticket {
         return String.format("Ticket: id - %d, titleMove - %s, genre - %s, price - %.2f, active - %b"
                 , id, titleMovie, genre, price, active);
     }
+
 }
